@@ -1,12 +1,14 @@
 const express = require("express");
 const app = express();
 const PORT = 9900;
-
+const morgan = require("morgan");
+const users = require("./MOCK_DATA.json");
 //ROUTES
 app.get("/users", (req, res)=>{
-    res.end("HEllo! This is home-page.");
+    res.status(200).json(users);
+    console.log("fetching all users in a json format.")
 })
-app.get("/users/:id", (req, req)=>{
+app.get("/users/:id", (req, res)=>{
     res.end("fetching user by id");
 })
 app.post("/users", (req,res)=> {
