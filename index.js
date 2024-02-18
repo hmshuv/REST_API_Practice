@@ -3,6 +3,9 @@ const app = express();
 const PORT = 9900;
 const morgan = require("morgan");
 const users = require("./MOCK_DATA.json");
+
+
+
 //ROUTES
 app.get("/users", (req, res)=>{
     res.status(200).json(users);
@@ -10,7 +13,7 @@ app.get("/users", (req, res)=>{
 })
 app.get("/users/:id", (req, res)=>{
     res.end("fetching user by id");
-})
+})  
 app.post("/users", (req,res)=> {
     res.end("adding user");
 })
