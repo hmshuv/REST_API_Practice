@@ -3,6 +3,7 @@ const app = express();
 const PORT = 9900;
 const morgan = require("morgan");
 const users = require("./MOCK_DATA.json");
+const mongoose = require("mongoose");
 
 
 
@@ -15,7 +16,7 @@ app.get("/users/:id", (req, res)=>{
     res.end("fetching user by id");
 })  
 app.post("/users", (req,res)=> {
-    res.end("adding user");
+    
 })
 app.patch("/users/:id", (req,res)=> {
     res.end("editing a particular user");
